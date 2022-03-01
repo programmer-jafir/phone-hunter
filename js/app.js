@@ -44,7 +44,6 @@ const loadPhoneDetail = id => {
 
 // display phone detail
 const displayPhoneDetail = data => {
-    console.log(data);
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
     const div = document.createElement('div');
@@ -57,6 +56,7 @@ const displayPhoneDetail = data => {
               <h6 class="card-text">Chipset: ${data?.mainFeatures?.chipSet || 'No'}</h6>
               <h6 class="card-text">Display size: ${data?.mainFeatures?.displaySize || 'No'}</h6>
               <h6 class="card-text">Memory: ${data?.mainFeatures?.memory || 'No'}</h6>
+              <h6 class="card-text">Storage: ${data?.mainFeatures?.storage || 'No'}</h6>
               <h6 class="card-text">Bluetooth: ${data.others?.Bluetooth || 'No'}</h6>
               <h6 class="card-text">GPS: ${data.others?.GPS || 'No'}</h6>
               <h6 class="card-text">NFC: ${data.others?.NFC || 'No'}</h6>
@@ -64,6 +64,7 @@ const displayPhoneDetail = data => {
               <h6 class="card-text">USB: ${data.others?.USB || 'No'}</h6>
               <h6 class="card-text">WLAN: ${data.others?.WLAN || 'No'}</h6>
               <h6 class="card-text">Relase Date: ${data?.releaseDate || 'No Relase Date found'}</h6>
+              <h6 class="card-text">Sensors: ${data?.mainFeatures.sensors || 'No Relase Date found'}</h6>
             </div>
     `;
     phoneDetails.appendChild(div);
