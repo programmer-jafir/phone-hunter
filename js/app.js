@@ -1,3 +1,5 @@
+// error
+document.getElementById('error').style.display = 'none';
 // Search Bar
 const searchPhone = () => {
     const searchFiled = document.getElementById('search-field');
@@ -9,7 +11,17 @@ const searchPhone = () => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displaySearchResult(data.data));
+        .then(data => {
+          
+          // error handaling massage
+          if(data.data.length == 0){
+            document.getElementById('error').style.display = 'block';
+          }
+          else{
+            displaySearchResult(data.data);
+          }
+        });
+        document.getElementById('error').style.display = 'none';
 }
 
 // Display search result
@@ -17,7 +29,6 @@ const displaySearchResult = data => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     data.forEach(phone => {
-        // console.log(phone);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
