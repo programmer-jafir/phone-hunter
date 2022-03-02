@@ -37,7 +37,7 @@ const displaySearchResult = data => {
         <div class="card-body">
           <h5 class="card-title">Name: ${phone.phone_name}</h5>
           <h6 class="card-text">Brand: ${phone.brand}</h6>
-          <button onclick="loadPhoneDetail('${phone.slug}')" class="btn btn-primary" >Details</button>
+          <button onclick="loadPhoneDetail('${phone.slug}')" class="btn btn-primary" >See Details</button>
         </div>
       </div>
         `;
