@@ -28,7 +28,7 @@ const searchPhone = () => {
 const displaySearchResult = data => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
-    data.forEach(phone => {
+    data.slice(0,20).forEach(phone => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
